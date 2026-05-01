@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PM Companion MVP</title>
+  <link rel="stylesheet" href="/frontend/styles.css" />
+</head>
+<body>
+  <h1>PM Companion MVP</h1>
+
+  <section>
+    <h2>Projetos</h2>
+    <form id="projectForm">
+      <input id="projectName" placeholder="Nome do projeto" required />
+      <input id="projectDesc" placeholder="Descrição" />
+      <button type="submit">Criar projeto</button>
+    </form>
+    <ul id="projectList"></ul>
+    <p>Projeto ativo: <strong id="activeProject">Nenhum</strong></p>
+  </section>
+
+  <section>
+    <h2>Upload</h2>
+    <input type="file" id="files" multiple />
+    <button id="uploadBtn">Enviar arquivos</button>
+    <button id="processBtn">Processar projeto</button>
+  </section>
+
+  <section>
+    <h2>Dashboard</h2>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <section>
+    <h2>Radar de atenção</h2>
+    <div id="alerts"></div>
+  </section>
+
+  <section>
+    <h2>Itens encontrados</h2>
+    <table>
+      <thead><tr><th>Tipo</th><th>Título</th><th>Owner</th><th>Severidade</th></tr></thead>
+      <tbody id="itemsTable"></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Relatório executivo</h2>
+    <button id="reportBtn">Gerar relatório</button>
+    <textarea id="reportArea" rows="12"></textarea>
+  </section>
+
+  <script src="/frontend/app.js"></script>
+</body>
+</html>
