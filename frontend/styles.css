@@ -1,0 +1,49 @@
+:root {
+  --bg: #0b1020;
+  --panel: #111a30;
+  --panel-2: #0f172a;
+  --border: #24324f;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #22d3ee;
+}
+
+* { box-sizing: border-box; }
+body { font-family: Inter, Arial, sans-serif; background: linear-gradient(180deg, #070b16 0%, #0b1020 100%); color: var(--text); margin: 0; }
+.topbar { padding: 20px; border-bottom: 1px solid var(--border); background: #0c1325; }
+.topbar h1 { margin: 0; }
+.topbar p { margin: 6px 0 0; color: var(--muted); }
+.container { max-width: 1200px; margin: 18px auto; padding: 0 14px; display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+.panel h2 { margin-top: 0; }
+#dashboardSection, #itemsSection, #reportSection { grid-column: span 2; }
+
+input, button, textarea, select { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); padding: 8px 10px; border-radius: 8px; }
+button { cursor: pointer; }
+button:hover { border-color: var(--accent); }
+.inline-form { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions { display: flex; gap: 8px; margin-top: 8px; }
+.list { padding-left: 18px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+.card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px; }
+.card .label { color: var(--muted); font-size: 12px; }
+.card .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+
+.alert { padding: 10px; margin: 8px 0; border-radius: 8px; border-left: 6px solid; background: #0f172a; }
+.alert.high { border-color: #ef4444; background: #3b1218; }
+.alert.medium { border-color: #f59e0b; background: #3a2a10; }
+.alert.low { border-color: #22c55e; background: #102f1d; }
+
+.items-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid var(--border); padding: 8px; text-align: left; }
+textarea { width: 100%; }
+
+.toast { position: fixed; right: 16px; bottom: 16px; background: #0f172a; border: 1px solid var(--border); padding: 10px 14px; border-radius: 8px; display: none; }
+.toast.show { display: block; }
+.toast.success { border-color: #16a34a; }
+.toast.error { border-color: #ef4444; }
+.toast.info { border-color: #38bdf8; }
+
+@media (max-width: 900px) { .container { grid-template-columns: 1fr; } #dashboardSection, #itemsSection, #reportSection { grid-column: span 1; } }

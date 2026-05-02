@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PM Companion MVP</title>
+  <link rel="stylesheet" href="/frontend/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>PM Companion MVP</h1>
+    <p>Demo local para análise de artefatos de projeto</p>
+  </header>
+
+  <main class="container">
+    <section class="panel" id="projectsSection">
+      <h2>Projetos</h2>
+      <form id="projectForm" class="inline-form">
+        <input id="projectName" placeholder="Nome do projeto" required />
+        <input id="projectDesc" placeholder="Descrição" />
+        <button type="submit">Criar projeto</button>
+      </form>
+      <ul id="projectList" class="list"></ul>
+      <p>Projeto ativo: <strong id="activeProject">Nenhum</strong></p>
+    </section>
+
+    <section class="panel" id="uploadSection">
+      <h2>Upload</h2>
+      <input type="file" id="files" multiple />
+      <div class="actions">
+        <button id="uploadBtn">Enviar arquivos</button>
+        <button id="processBtn">Processar projeto</button>
+      </div>
+    </section>
+
+    <section class="panel" id="dashboardSection">
+      <h2>Dashboard</h2>
+      <div id="cards" class="cards"></div>
+    </section>
+
+    <section class="panel" id="radarSection">
+      <h2>Radar de atenção</h2>
+      <div id="alerts"></div>
+    </section>
+
+    <section class="panel" id="itemsSection">
+      <div class="items-header">
+        <h2>Itens encontrados</h2>
+        <select id="itemTypeFilter">
+          <option value="all">all</option>
+          <option value="action">action</option>
+          <option value="risk">risk</option>
+          <option value="decision">decision</option>
+          <option value="dependency">dependency</option>
+          <option value="open_question">open_question</option>
+        </select>
+      </div>
+      <table>
+        <thead><tr><th>Tipo</th><th>Título</th><th>Owner</th><th>Severidade</th></tr></thead>
+        <tbody id="itemsTable"></tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="reportSection">
+      <h2>Relatório executivo</h2>
+      <div class="actions">
+        <button id="reportBtn">Gerar relatório</button>
+        <button id="copyReportBtn">Copiar relatório</button>
+      </div>
+      <textarea id="reportArea" rows="12" readonly></textarea>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="/frontend/app.js"></script>
+</body>
+</html>
